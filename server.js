@@ -15,18 +15,18 @@ app.get('/listUsers',function (req,res) {
 app.get('/validateUser',function (req,res) {
   var username = req.param('username');
   var password = req.param('password');
-
+  var validated = 0;
 
 //  fs.readFile(__dirname + "/" + "users.json",'utf8', function (err,data) {
 //    obj = JSON.parse(data);
 //    validated = obj[0].username == username;
-  if ((username == "james") && password == "password")) {
+  if ((username == "james") && (password == "one")) {
       validated = 1;
     } else {
     validated = 0;
   }
 
-res.send(validated)
+res.send(validated.toString())
 
 });
 
