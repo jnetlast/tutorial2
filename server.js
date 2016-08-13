@@ -17,12 +17,16 @@ app.get('/validateUser',function (req,res) {
   var password = req.param('password');
 
 
-  fs.readFile(__dirname + "/" + "users.json",'utf8', function (err,data) {
-    obj = JSON.parse(data);
-    validated = obj[0].username == username;
-    res.send( validated );
+//  fs.readFile(__dirname + "/" + "users.json",'utf8', function (err,data) {
+//    obj = JSON.parse(data);
+//    validated = obj[0].username == username;
+  if ((username == "james") && password == "password")) {
+      validated = 1;
+    } else {
+    validated = 0;
+  }
 
-  });
+res.send(validated)
 
 });
 
